@@ -10,6 +10,10 @@ app.use(cookieParser());
 
 const PORT = process.env.PORT;
 
+app.get("/health", (req, res) => {
+  res.status(200).send("Success Heatlth Check");
+});
+
 //미들웨어
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
