@@ -3,12 +3,11 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const imageUrls = [
-  "https://ibb.co/kyMwV47",
-  "https://ibb.co/jWLyXWr",
-  "https://ibb.co/RTFnpH2",
-  "https://ibb.co/B3rNTG7",
-  "https://ibb.co/Hp2Kz7d",
-  "https://ibb.co/0mmD9PT",
+  "https://i.ibb.co/NmL9Bmy/avatar2.png",
+  "https://i.ibb.co/TMfXBhc/avatar3.png",
+  "https://i.ibb.co/LRJ59rq/avatar4.png",
+  "https://i.ibb.co/mFBRqJ8/avatar5.png",
+  "https://i.ibb.co/9cc84R6/avatar6.png",
 ];
 
 exports.signup = async (req, res) => {
