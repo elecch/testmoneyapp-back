@@ -2,6 +2,15 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+const imageUrls = [
+  "https://ibb.co/kyMwV47",
+  "https://ibb.co/jWLyXWr",
+  "https://ibb.co/RTFnpH2",
+  "https://ibb.co/B3rNTG7",
+  "https://ibb.co/Hp2Kz7d",
+  "https://ibb.co/0mmD9PT",
+];
+
 exports.signup = async (req, res) => {
   const { username, email, password } = req.body;
   try {
@@ -11,10 +20,16 @@ exports.signup = async (req, res) => {
     }
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt);
+
+    // 랜덤 인덱스 생성 및 이미지 URL 선택
+    const randomIndex = Math.floor(Math.random() * imageUrls.length);
+    const picture = imageUrls[randomIndex];
+
     const user = await User.create({
       email: email,
       password: hashedPassword,
       username: username,
+      picture: picture,
     });
     return res.status(201).send({ user });
   } catch (error) {
