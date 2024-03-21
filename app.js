@@ -16,15 +16,10 @@ app.get("/health", (req, res) => {
 
 //미들웨어
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: "https://ge-rang.com", credentials: true }));
 
 //login routes
 app.use("/user", UserAuthRouter);
-
-// app routes
-// readdirSync("./routes").map((route) =>
-//   app.use("/api/v1", require("./routes/" + route))
-// );
 
 const server = () => {
   dbConnect();
