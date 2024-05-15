@@ -32,7 +32,7 @@ app.get("/search", async (req, res) => {
     },
     params: {
       query: query,
-      display: 10,
+      display: 3,
       start: 1,
     },
   };
