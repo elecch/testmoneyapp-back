@@ -38,9 +38,7 @@ app.get("/search", async (req, res) => {
   };
 
   try {
-    console.log("Sending request to Naver API with query:", query);
     const response = await axios.get(url, options);
-    console.log("Naver API response:", response.data);
     res.json(response.data);
   } catch (error) {
     console.error("Error:", error.message);
