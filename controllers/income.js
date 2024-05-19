@@ -14,7 +14,6 @@ exports.addIncome = async (req, res) => {
   });
 
   try {
-    //validations
     if (!title || !category || !description || !date) {
       return res.status(400).json({ message: "모든 필드를 입력해야 합니다!" });
     }
